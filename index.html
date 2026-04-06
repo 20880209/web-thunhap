@@ -238,11 +238,11 @@
             };
 
             return (
-                <div className="min-h-screen bg-slate-50 py-10 px-4 font-sans text-slate-800">
-                    <div className="max-w-6xl mx-auto space-y-8">
+                <div className="min-h-screen bg-slate-50 py-6 sm:py-10 px-3 sm:px-4 font-sans text-slate-800">
+                    <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8">
                         
                         {/* Header Tô Màu */}
-                        <div className="bg-gradient-to-br from-blue-900 to-slate-900 p-6 sm:p-8 rounded-3xl shadow-xl border border-blue-800/50 flex flex-col xl:flex-row items-center justify-between gap-6 relative overflow-hidden text-white">
+                        <div className="bg-gradient-to-br from-blue-900 to-slate-900 p-5 sm:p-8 rounded-[2rem] shadow-xl border border-blue-800/50 flex flex-col xl:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden text-white">
                             
                             {/* Decorative background elements */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -253,52 +253,52 @@
                                     <Landmark size={36} />
                                 </div>
                                 <div className="w-full">
-                                    <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4 drop-shadow-sm leading-tight">
+                                    <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight mb-3 sm:mb-4 drop-shadow-sm leading-tight text-center sm:text-left">
                                         Tính và Quyết toán Thuế Thu Nhập Cá Nhân
                                     </h1>
                                     <div className="flex flex-col gap-3 text-sm sm:text-base font-medium text-indigo-50">
-                                        <div className="flex items-center gap-2">
-                                            <Info size={18} className="text-blue-300 shrink-0" />
-                                            <span className="leading-relaxed">Kết quả thuế TNCN chính xác dựa trên công thức công bố từ cơ quan Nhà Nước.</span>
+                                        <div className="flex items-start sm:items-center gap-2">
+                                            <Info size={16} className="text-blue-300 shrink-0 mt-0.5 sm:mt-0" />
+                                            <span className="leading-relaxed text-[13px] sm:text-sm text-indigo-100">Kết quả thuế TNCN chính xác dựa trên công thức công bố từ cơ quan Nhà Nước.</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
-                            {/* Contact, Coffee & QR Section */}
-                            <div className="flex flex-col sm:flex-row items-center gap-5 bg-white/10 p-4 sm:p-5 rounded-2xl backdrop-blur-sm border border-white/10 w-full xl:w-auto relative z-10 shrink-0 shadow-inner">
+                            {/* Contact, Coffee & QR Section - Optimized for Mobile */}
+                            <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4 sm:gap-5 bg-white/10 p-4 sm:p-5 rounded-2xl backdrop-blur-sm border border-white/10 w-full xl:w-auto relative z-10 shrink-0 shadow-inner">
                                 
                                 {/* QR Code moves to the left */}
-                                <div className="flex flex-col items-center gap-2 shrink-0 border-b sm:border-b-0 sm:border-r border-white/20 pb-4 sm:pb-0 sm:pr-5 mb-2 sm:mb-0">
+                                <div className="flex flex-col items-center gap-1 sm:gap-2 shrink-0 border-b sm:border-b-0 sm:border-r border-white/20 pb-3 sm:pb-0 sm:pr-5 mb-1 sm:mb-0">
                                     <div className="bg-white p-1.5 rounded-xl shadow-md">
-                                        <img src="qr.jpg" alt="QR Code" className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-contain" />
+                                        <img src="qr.jpg" alt="QR Code" className="w-16 h-16 sm:w-24 sm:h-24 rounded-lg object-contain" />
                                     </div>
                                     <div className="text-center mt-1">
-                                        <div className="text-xs font-bold text-white tracking-wide">Vietcombank</div>
-                                        <div className="text-xs font-semibold text-blue-200 font-mono tracking-wider mt-0.5">0071001071803</div>
+                                        <div className="text-[11px] sm:text-xs font-bold text-white tracking-wide">Vietcombank</div>
+                                        <div className="text-[11px] sm:text-xs font-semibold text-blue-200 font-mono tracking-wider mt-0.5">0071001071803</div>
                                     </div>
                                 </div>
 
                                 {/* Text content moves to the right */}
-                                <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:w-auto overflow-hidden space-y-2">
-                                    <div className="flex items-center gap-2 bg-emerald-500/20 text-emerald-50 px-3 py-1.5 rounded-lg w-fit border border-emerald-400/30 mb-1">
-                                        <MessageSquare size={16} className="text-emerald-300 shrink-0" />
-                                        <span className="font-semibold text-sm">Nhận góp ý, tư vấn, quyết toán thuế</span>
+                                <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:w-auto space-y-2.5 sm:space-y-2">
+                                    <div className="flex items-center justify-center sm:justify-start gap-1.5 bg-emerald-500/20 text-emerald-50 px-2.5 sm:px-3 py-1.5 rounded-lg w-fit border border-emerald-400/30">
+                                        <MessageSquare size={14} className="text-emerald-300 shrink-0 sm:w-4 sm:h-4" />
+                                        <span className="font-semibold text-xs sm:text-sm">Nhận góp ý, tư vấn, quyết toán thuế</span>
                                     </div>
                                     
-                                    <a href="mailto:ngchicongvt@gmail.com" className="flex items-center justify-center sm:justify-start gap-2 text-sm text-indigo-50 hover:text-white transition-colors w-full sm:w-auto">
-                                        <Mail size={16} className="opacity-80 shrink-0" />
+                                    <a href="mailto:ngchicongvt@gmail.com" className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 text-xs sm:text-sm text-indigo-50 hover:text-white transition-colors w-full sm:w-auto">
+                                        <Mail size={14} className="opacity-80 shrink-0 sm:w-4 sm:h-4" />
                                         <span>ngchicongvt@gmail.com</span>
                                     </a>
-                                    <a href="tel:0902288060" className="flex items-center justify-center sm:justify-start gap-2 text-sm text-indigo-50 hover:text-white transition-colors w-full sm:w-auto">
-                                        <Phone size={16} className="opacity-80 shrink-0" />
+                                    <a href="tel:0902288060" className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 text-xs sm:text-sm text-indigo-50 hover:text-white transition-colors w-full sm:w-auto">
+                                        <Phone size={14} className="opacity-80 shrink-0 sm:w-4 sm:h-4" />
                                         <span>Điện thoại / Zalo: 0902288060</span>
                                     </a>
 
-                                    <div className="flex items-center justify-center sm:justify-start gap-1.5 text-white whitespace-nowrap mt-2 pt-2 border-t border-white/10 w-full">
-                                        <span className="text-sm font-medium text-indigo-100">Nếu bạn thấy có ích,</span>
-                                        <span className="text-sm font-bold">mời mình ly cafe nhé</span>
-                                        <Heart size={16} className="text-pink-400 fill-pink-400 drop-shadow-sm shrink-0" />
+                                    <div className="flex items-center justify-center sm:justify-start gap-1 sm:gap-1.5 text-white whitespace-nowrap mt-1 sm:mt-2 pt-2.5 sm:pt-2 border-t border-white/10 w-full">
+                                        <span className="text-[11px] sm:text-sm font-medium text-indigo-100">Nếu bạn thấy có ích,</span>
+                                        <span className="text-[11px] sm:text-sm font-bold">mời mình ly cafe nhé</span>
+                                        <Heart size={12} className="text-pink-400 fill-pink-400 drop-shadow-sm shrink-0 sm:w-4 sm:h-4" />
                                     </div>
                                 </div>
                                 
@@ -306,21 +306,21 @@
 
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
                             
                             {/* Form Input Section */}
-                            <div className="lg:col-span-7 space-y-6">
+                            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                                 
                                 {/* 1. Thông tin thu nhập */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
-                                    <div className="flex justify-between items-center mb-6">
+                                <div className="bg-white p-5 sm:p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
+                                    <div className="flex justify-between items-center mb-5 sm:mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Wallet size={20} /></div>
-                                            <h2 className="text-xl font-bold text-slate-800">1. Thông tin thu nhập</h2>
+                                            <h2 className="text-lg sm:text-xl font-bold text-slate-800">1. Thông tin thu nhập</h2>
                                         </div>
                                     </div>
                                     
-                                    <div className="grid grid-cols-2 gap-4 mb-5">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                                         <div>
                                             <label className="block text-sm font-semibold text-slate-600 mb-1.5">Năm tính thuế</label>
                                             <select 
@@ -333,17 +333,17 @@
                                         </div>
                                     </div>
 
-                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                                        <div className="flex flex-wrap gap-2 p-1 bg-slate-50 rounded-xl border border-slate-200 inline-flex">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 sm:mb-6">
+                                        <div className="flex flex-wrap gap-2 p-1 bg-slate-50 rounded-xl border border-slate-200 w-full sm:w-auto flex-row">
                                             <button
                                                 onClick={() => setIncomeInputType('yearly')}
-                                                className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${incomeInputType === 'yearly' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                                                className={`flex-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${incomeInputType === 'yearly' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                                             >
                                                 Tổng thu nhập 1 năm
                                             </button>
                                             <button
                                                 onClick={() => setIncomeInputType('periods')}
-                                                className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all ${incomeInputType === 'periods' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                                                className={`flex-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap ${incomeInputType === 'periods' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
                                             >
                                                 Chọn từng giai đoạn
                                             </button>
@@ -352,7 +352,7 @@
                                         {incomeInputType === 'yearly' ? (
                                             <button 
                                                 onClick={addYearlyIncome}
-                                                className="flex items-center justify-center space-x-1 text-sm bg-indigo-50 text-indigo-600 font-medium px-4 py-2.5 rounded-xl hover:bg-indigo-100 transition-colors"
+                                                className="flex items-center justify-center space-x-1 text-sm bg-indigo-50 text-indigo-600 font-medium px-4 py-2.5 rounded-xl hover:bg-indigo-100 transition-colors w-full sm:w-auto"
                                             >
                                                 <Plus size={16} />
                                                 <span>Thêm công ty</span>
@@ -360,7 +360,7 @@
                                         ) : (
                                             <button 
                                                 onClick={addIncome}
-                                                className="flex items-center justify-center space-x-1 text-sm bg-indigo-50 text-indigo-600 font-medium px-4 py-2.5 rounded-xl hover:bg-indigo-100 transition-colors"
+                                                className="flex items-center justify-center space-x-1 text-sm bg-indigo-50 text-indigo-600 font-medium px-4 py-2.5 rounded-xl hover:bg-indigo-100 transition-colors w-full sm:w-auto"
                                             >
                                                 <Plus size={16} />
                                                 <span>Thêm giai đoạn</span>
@@ -371,11 +371,11 @@
                                     {incomeInputType === 'yearly' ? (
                                         <div className="space-y-4">
                                             {yearlyIncomes.map((yInc, index) => (
-                                                <div key={yInc.id} className="bg-gradient-to-br from-indigo-50/50 to-white p-5 rounded-2xl border border-indigo-100 relative group hover:border-indigo-300">
+                                                <div key={yInc.id} className="bg-gradient-to-br from-indigo-50/50 to-white p-4 sm:p-5 rounded-2xl border border-indigo-100 relative group hover:border-indigo-300">
                                                     {yearlyIncomes.length > 1 && (
                                                         <button 
                                                             onClick={() => removeYearlyIncome(yInc.id)}
-                                                            className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                            className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors sm:opacity-0 group-hover:opacity-100"
                                                             title="Xóa công ty"
                                                         >
                                                             <Trash2 size={18} />
@@ -390,9 +390,9 @@
                                                             value={formatCurrency(yInc.amount)}
                                                             onChange={(e) => updateYearlyIncome(yInc.id, e.target.value)}
                                                             placeholder="VD: 240,000,000"
-                                                            className="w-full p-3.5 pr-12 bg-white border border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-right font-bold text-lg text-indigo-900 shadow-sm"
+                                                            className="w-full p-3 sm:p-3.5 pr-12 bg-white border border-indigo-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-right font-bold text-base sm:text-lg text-indigo-900 shadow-sm"
                                                         />
-                                                        <span className="absolute right-4 top-3.5 text-slate-400 font-bold">đ</span>
+                                                        <span className="absolute right-4 top-3 sm:top-3.5 text-slate-400 font-bold">đ</span>
                                                     </div>
                                                 </div>
                                             ))}
@@ -400,50 +400,50 @@
                                     ) : (
                                         <div className="space-y-4">
                                             {incomes.map((inc, index) => (
-                                                <div key={inc.id} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative group hover:border-indigo-300 transition-colors">
+                                                <div key={inc.id} className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm relative group hover:border-indigo-300 transition-colors">
                                                     {incomes.length > 1 && (
                                                         <button 
                                                             onClick={() => removeIncome(inc.id)}
-                                                            className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                            className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors sm:opacity-0 group-hover:opacity-100"
                                                             title="Xóa"
                                                         >
                                                             <Trash2 size={18} />
                                                         </button>
                                                     )}
-                                                    <h3 className="text-sm font-bold text-indigo-800 mb-4 bg-indigo-50 inline-block px-3 py-1 rounded-md">Giai đoạn {index + 1}</h3>
+                                                    <h3 className="text-xs sm:text-sm font-bold text-indigo-800 mb-4 bg-indigo-50 inline-block px-3 py-1 rounded-md">Giai đoạn {index + 1}</h3>
                                                     
-                                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                                                        <div>
-                                                            <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Từ tháng</label>
+                                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+                                                        <div className="col-span-1">
+                                                            <label className="block text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Từ tháng</label>
                                                             <select 
                                                                 value={inc.startMonth} 
                                                                 onChange={(e) => updateIncomeMonth(inc.id, 'startMonth', e.target.value)}
-                                                                className="w-full p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
+                                                                className="w-full p-2.5 sm:p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
                                                             >
                                                                 {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={m}>Tháng {m}</option>)}
                                                             </select>
                                                         </div>
-                                                        <div>
-                                                            <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Đến tháng</label>
+                                                        <div className="col-span-1">
+                                                            <label className="block text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Đến tháng</label>
                                                             <select 
                                                                 value={inc.endMonth} 
                                                                 onChange={(e) => updateIncomeMonth(inc.id, 'endMonth', e.target.value)}
-                                                                className="w-full p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
+                                                                className="w-full p-2.5 sm:p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500"
                                                             >
                                                                 {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={m}>Tháng {m}</option>)}
                                                             </select>
                                                         </div>
-                                                        <div>
-                                                            <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Mức lương / tháng</label>
+                                                        <div className="col-span-2 md:col-span-1">
+                                                            <label className="block text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Mức lương / tháng</label>
                                                             <div className="relative">
                                                                 <input 
                                                                     type="text" 
                                                                     value={formatCurrency(inc.salary)}
                                                                     onChange={(e) => updateIncomeSalary(inc.id, e.target.value)}
                                                                     placeholder="20,000,000"
-                                                                    className="w-full p-3 pr-8 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-right font-bold text-slate-700"
+                                                                    className="w-full p-2.5 sm:p-3 pr-8 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-right font-bold text-slate-700"
                                                                 />
-                                                                <span className="absolute right-3 top-3 text-slate-400 font-medium">đ</span>
+                                                                <span className="absolute right-3 top-2.5 sm:top-3 text-slate-400 font-medium">đ</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -454,66 +454,67 @@
                                 </div>
 
                                 {/* 2. Bảo hiểm xã hội */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
-                                    <div className="flex justify-between items-center mb-6">
+                                <div className="bg-white p-5 sm:p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
+                                    <div className="flex justify-between items-center mb-5 sm:mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg"><ShieldCheck size={20} /></div>
-                                            <h2 className="text-xl font-bold text-slate-800">2. Mức đóng Bảo hiểm xã hội</h2>
+                                            <h2 className="text-lg sm:text-xl font-bold text-slate-800">2. Mức đóng Bảo hiểm xã hội</h2>
                                         </div>
                                         <button 
                                             onClick={addInsurance}
-                                            className="flex items-center space-x-1 text-sm bg-emerald-50 text-emerald-600 font-medium px-4 py-2 rounded-xl hover:bg-emerald-100 transition-colors"
+                                            className="flex items-center space-x-1 text-sm bg-emerald-50 text-emerald-600 font-medium px-3 sm:px-4 py-2 rounded-xl hover:bg-emerald-100 transition-colors"
                                         >
                                             <Plus size={16} />
-                                            <span>Thêm giai đoạn</span>
+                                            <span className="hidden sm:inline">Thêm giai đoạn</span>
+                                            <span className="sm:hidden">Thêm</span>
                                         </button>
                                     </div>
                                     
                                     <div className="space-y-4">
                                         {insurances.map((ins, index) => (
-                                            <div key={ins.id} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative group hover:border-emerald-300 transition-colors">
+                                            <div key={ins.id} className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm relative group hover:border-emerald-300 transition-colors">
                                                 {insurances.length > 1 && (
                                                     <button 
                                                         onClick={() => removeInsurance(ins.id)}
-                                                        className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                        className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors sm:opacity-0 group-hover:opacity-100"
                                                     >
                                                         <Trash2 size={18} />
                                                     </button>
                                                 )}
-                                                <h3 className="text-sm font-bold text-emerald-800 mb-4 bg-emerald-50 inline-block px-3 py-1 rounded-md">Giai đoạn {index + 1}</h3>
+                                                <h3 className="text-xs sm:text-sm font-bold text-emerald-800 mb-4 bg-emerald-50 inline-block px-3 py-1 rounded-md">Giai đoạn {index + 1}</h3>
                                                 
-                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                                                    <div>
-                                                        <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Từ tháng</label>
+                                                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+                                                    <div className="col-span-1">
+                                                        <label className="block text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Từ tháng</label>
                                                         <select 
                                                             value={ins.startMonth} 
                                                             onChange={(e) => updateInsuranceMonth(ins.id, 'startMonth', e.target.value)}
-                                                            className="w-full p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500"
+                                                            className="w-full p-2.5 sm:p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500"
                                                         >
                                                             {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={m}>Tháng {m}</option>)}
                                                         </select>
                                                     </div>
-                                                    <div>
-                                                        <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Đến tháng</label>
+                                                    <div className="col-span-1">
+                                                        <label className="block text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Đến tháng</label>
                                                         <select 
                                                             value={ins.endMonth} 
                                                             onChange={(e) => updateInsuranceMonth(ins.id, 'endMonth', e.target.value)}
-                                                            className="w-full p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500"
+                                                            className="w-full p-2.5 sm:p-3 text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-emerald-500"
                                                         >
                                                             {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={m}>Tháng {m}</option>)}
                                                         </select>
                                                     </div>
-                                                    <div>
-                                                        <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Mức đóng / tháng</label>
+                                                    <div className="col-span-2 md:col-span-1">
+                                                        <label className="block text-[11px] sm:text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">Mức đóng / tháng</label>
                                                         <div className="relative">
                                                             <input 
                                                                 type="text" 
                                                                 value={formatCurrency(ins.base)}
                                                                 onChange={(e) => updateInsuranceBase(ins.id, e.target.value)}
                                                                 placeholder="VD: 5,000,000"
-                                                                className="w-full p-3 pr-8 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none text-right font-bold text-slate-700 transition-all shadow-sm"
+                                                                className="w-full p-2.5 sm:p-3 pr-8 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none text-right font-bold text-slate-700 transition-all shadow-sm"
                                                             />
-                                                            <span className="absolute right-3 top-3 text-slate-400 font-medium">đ</span>
+                                                            <span className="absolute right-3 top-2.5 sm:top-3 text-slate-400 font-medium">đ</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -523,32 +524,33 @@
                                 </div>
 
                                 {/* 3. Người phụ thuộc */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
-                                    <div className="flex justify-between items-center mb-6">
+                                <div className="bg-white p-5 sm:p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
+                                    <div className="flex justify-between items-center mb-5 sm:mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-pink-50 text-pink-600 rounded-lg"><Users size={20} /></div>
-                                            <h2 className="text-xl font-bold text-slate-800">3. Người phụ thuộc</h2>
+                                            <h2 className="text-lg sm:text-xl font-bold text-slate-800">3. Người phụ thuộc</h2>
                                         </div>
                                         <button 
                                             onClick={addDependent}
-                                            className="flex items-center space-x-1 text-sm bg-pink-50 text-pink-600 font-medium px-4 py-2 rounded-xl hover:bg-pink-100 transition-colors"
+                                            className="flex items-center space-x-1 text-sm bg-pink-50 text-pink-600 font-medium px-3 sm:px-4 py-2 rounded-xl hover:bg-pink-100 transition-colors"
                                         >
                                             <Plus size={16} />
-                                            <span>Thêm người</span>
+                                            <span className="hidden sm:inline">Thêm người</span>
+                                            <span className="sm:hidden">Thêm</span>
                                         </button>
                                     </div>
 
                                     {dependents.length === 0 ? (
                                         <div className="bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl py-8 flex flex-col items-center justify-center text-slate-400">
                                             <Users size={32} className="mb-2 opacity-50" />
-                                            <p className="text-sm font-medium">Bạn chưa đăng ký người phụ thuộc nào</p>
+                                            <p className="text-sm font-medium text-center px-4">Bạn chưa đăng ký người phụ thuộc nào</p>
                                         </div>
                                     ) : (
                                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                             {dependents.map((dep, index) => (
                                                 <div 
                                                     key={dep.id} 
-                                                    className={`p-5 rounded-2xl border transition-all relative group ${
+                                                    className={`p-4 sm:p-5 rounded-2xl border transition-all relative group ${
                                                         dep.type === 'child' ? 'bg-pink-50/50 border-pink-200 hover:border-pink-300' : 
                                                         dep.type === 'elder' ? 'bg-teal-50/50 border-teal-200 hover:border-teal-300' :
                                                         'bg-amber-50/50 border-amber-200 hover:border-amber-300'
@@ -556,7 +558,7 @@
                                                 >
                                                     <button 
                                                         onClick={() => removeDependent(dep.id)}
-                                                        className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                        className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors sm:opacity-0 group-hover:opacity-100"
                                                     >
                                                         <Trash2 size={18} />
                                                     </button>
@@ -579,21 +581,21 @@
                                                             onClick={() => updateDependent(dep.id, 'type', 'child')}
                                                             className={`flex-1 flex flex-col items-center justify-center py-2 px-1 rounded-xl border transition-all ${dep.type === 'child' ? 'bg-white border-pink-300 shadow-sm text-pink-700' : 'bg-transparent border-transparent text-slate-500 hover:bg-white/50'}`}
                                                         >
-                                                            <Baby size={20} className="mb-1" /> 
+                                                            <Baby size={18} className="mb-1" /> 
                                                             <span className="text-[10px] font-bold uppercase tracking-wider">Con cái</span>
                                                         </button>
                                                         <button
                                                             onClick={() => updateDependent(dep.id, 'type', 'elder')}
                                                             className={`flex-1 flex flex-col items-center justify-center py-2 px-1 rounded-xl border transition-all ${dep.type === 'elder' ? 'bg-white border-teal-300 shadow-sm text-teal-700' : 'bg-transparent border-transparent text-slate-500 hover:bg-white/50'}`}
                                                         >
-                                                            <Users size={20} className="mb-1" /> 
+                                                            <Users size={18} className="mb-1" /> 
                                                             <span className="text-[10px] font-bold uppercase tracking-wider">Ông bà</span>
                                                         </button>
                                                         <button
                                                             onClick={() => updateDependent(dep.id, 'type', 'other')}
                                                             className={`flex-1 flex flex-col items-center justify-center py-2 px-1 rounded-xl border transition-all ${dep.type === 'other' ? 'bg-white border-amber-300 shadow-sm text-amber-700' : 'bg-transparent border-transparent text-slate-500 hover:bg-white/50'}`}
                                                         >
-                                                            <User size={20} className="mb-1" /> 
+                                                            <User size={18} className="mb-1" /> 
                                                             <span className="text-[10px] font-bold uppercase tracking-wider">Khác</span>
                                                         </button>
                                                     </div>
@@ -604,7 +606,7 @@
                                                             <select 
                                                                 value={dep.startMonth}
                                                                 onChange={(e) => updateDependent(dep.id, 'startMonth', e.target.value)}
-                                                                className="w-full p-2 text-sm bg-white border border-slate-200 rounded-lg outline-none font-medium"
+                                                                className="w-full p-2.5 text-sm bg-white border border-slate-200 rounded-lg outline-none font-medium"
                                                             >
                                                                 {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={m}>T{m}</option>)}
                                                             </select>
@@ -614,7 +616,7 @@
                                                             <select 
                                                                 value={dep.endMonth}
                                                                 onChange={(e) => updateDependent(dep.id, 'endMonth', e.target.value)}
-                                                                className="w-full p-2 text-sm bg-white border border-slate-200 rounded-lg outline-none font-medium"
+                                                                className="w-full p-2.5 text-sm bg-white border border-slate-200 rounded-lg outline-none font-medium"
                                                             >
                                                                 {Array.from({length: 12}, (_, i) => i + 1).map(m => <option key={m} value={m}>T{m}</option>)}
                                                             </select>
@@ -627,28 +629,29 @@
                                 </div>
 
                                 {/* 4. Thuế đã khấu trừ */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
-                                    <div className="flex justify-between items-center mb-6">
+                                <div className="bg-white p-5 sm:p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
+                                    <div className="flex justify-between items-center mb-5 sm:mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-amber-50 text-amber-600 rounded-lg"><FileCheck size={20} /></div>
-                                            <h2 className="text-xl font-bold text-slate-800">4. Thuế TNCN đã khấu trừ</h2>
+                                            <h2 className="text-lg sm:text-xl font-bold text-slate-800">4. Thuế TNCN đã khấu trừ</h2>
                                         </div>
                                         <button 
                                             onClick={addDeductedTax}
-                                            className="flex items-center space-x-1 text-sm bg-amber-50 text-amber-600 font-medium px-4 py-2 rounded-xl hover:bg-amber-100 transition-colors"
+                                            className="flex items-center space-x-1 text-sm bg-amber-50 text-amber-600 font-medium px-3 sm:px-4 py-2 rounded-xl hover:bg-amber-100 transition-colors"
                                         >
                                             <Plus size={16} />
-                                            <span>Thêm công ty</span>
+                                            <span className="hidden sm:inline">Thêm công ty</span>
+                                            <span className="sm:hidden">Thêm</span>
                                         </button>
                                     </div>
                                     
                                     <div className="space-y-4">
                                         {deductedTaxes.map((tax, index) => (
-                                            <div key={tax.id} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative group hover:border-amber-300 transition-colors">
+                                            <div key={tax.id} className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm relative group hover:border-amber-300 transition-colors">
                                                 {deductedTaxes.length > 1 && (
                                                     <button 
                                                         onClick={() => removeDeductedTax(tax.id)}
-                                                        className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100"
+                                                        className="absolute top-4 right-4 text-slate-300 hover:text-red-500 transition-colors sm:opacity-0 group-hover:opacity-100"
                                                         title="Xóa công ty"
                                                     >
                                                         <Trash2 size={18} />
@@ -663,9 +666,9 @@
                                                         value={formatCurrency(tax.amount)}
                                                         onChange={(e) => updateDeductedTax(tax.id, e.target.value)}
                                                         placeholder="VD: 5,000,000"
-                                                        className="w-full p-3.5 pr-12 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none text-right font-bold text-lg text-slate-700 shadow-sm transition-shadow"
+                                                        className="w-full p-3 sm:p-3.5 pr-12 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none text-right font-bold text-base sm:text-lg text-slate-700 shadow-sm transition-shadow"
                                                     />
-                                                    <span className="absolute right-4 top-3.5 text-slate-400 font-bold">đ</span>
+                                                    <span className="absolute right-4 top-3 sm:top-3.5 text-slate-400 font-bold">đ</span>
                                                 </div>
                                             </div>
                                         ))}
@@ -691,79 +694,79 @@
 
                             </div>
 
-                            {/* Result Section (Khối Premium) */}
+                            {/* Result Section */}
                             <div className="lg:col-span-5 space-y-6">
                                 
-                                <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900 via-slate-900 to-black text-white p-8 rounded-3xl shadow-2xl sticky top-6 border border-slate-800">
-                                    <div className="flex items-center space-x-3 mb-8 pb-5 border-b border-slate-700/50">
+                                <div className="bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900 via-slate-900 to-black text-white p-6 sm:p-8 rounded-3xl shadow-2xl sticky top-6 border border-slate-800 overflow-hidden">
+                                    <div className="flex items-center space-x-3 mb-6 sm:mb-8 pb-5 border-b border-slate-700/50">
                                         <div className="bg-indigo-500/20 p-2 rounded-xl text-indigo-400">
                                             <Receipt size={24} />
                                         </div>
-                                        <h2 className="text-2xl font-bold text-white tracking-wide">Kết quả</h2>
+                                        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-wide">Kết quả</h2>
                                     </div>
                                     
                                     {!result ? (
-                                        <div className="text-center py-12 text-slate-500 flex flex-col items-center">
+                                        <div className="text-center py-10 sm:py-12 text-slate-500 flex flex-col items-center">
                                             <Calculator size={56} className="mb-6 opacity-20 drop-shadow-lg" />
-                                            <p className="text-base font-medium">Nhập thông tin và nhấn tính toán để xem số liệu chi tiết.</p>
+                                            <p className="text-sm sm:text-base font-medium px-4">Nhập thông tin và nhấn tính toán để xem số liệu chi tiết.</p>
                                         </div>
                                     ) : (
-                                        <div className="space-y-5 text-sm">
-                                            <div className="flex justify-between items-center bg-slate-800/50 p-3 rounded-xl">
+                                        <div className="space-y-4 sm:space-y-5 text-sm">
+                                            <div className="flex flex-col sm:flex-row justify-between sm:items-center bg-slate-800/50 p-3 rounded-xl gap-1">
                                                 <span className="text-slate-400 font-medium">Tổng số tháng tính thuế:</span>
-                                                <span className="font-bold text-indigo-300 whitespace-nowrap shrink-0 ml-2">{result.workingMonths} tháng (Năm {result.currentYear})</span>
+                                                <span className="font-bold text-indigo-300">{result.workingMonths} tháng (Năm {result.currentYear})</span>
                                             </div>
 
-                                            <div className="flex justify-between items-center pt-2 px-1">
+                                            <div className="flex justify-between items-center pt-2 px-1 gap-2">
                                                 <span className="text-slate-300">Tổng thu nhập:</span>
-                                                <span className="font-bold text-lg whitespace-nowrap shrink-0 ml-2">{formatCurrency(result.totalIncome)} đ</span>
+                                                <span className="font-bold text-base sm:text-lg whitespace-nowrap">{formatCurrency(result.totalIncome)} đ</span>
                                             </div>
 
-                                            <div className="flex justify-between items-center text-pink-400/90 px-1">
-                                                <span>Trừ: Bảo hiểm bắt buộc:</span>
-                                                <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.totalInsurance)} đ</span>
+                                            <div className="flex justify-between items-center text-pink-400/90 px-1 gap-2">
+                                                <span>Trừ: BH bắt buộc:</span>
+                                                <span className="font-medium whitespace-nowrap">- {formatCurrency(result.totalInsurance)} đ</span>
                                             </div>
 
-                                            <div className="flex justify-between items-center text-pink-400/90 px-1">
-                                                <span>Trừ: Giảm trừ bản thân (x{result.workingMonths}T):</span>
-                                                <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.personalDeduction)} đ</span>
+                                            <div className="flex justify-between items-center text-pink-400/90 px-1 gap-2">
+                                                <span>Trừ: Bản thân (x{result.workingMonths}T):</span>
+                                                <span className="font-medium whitespace-nowrap">- {formatCurrency(result.personalDeduction)} đ</span>
                                             </div>
 
-                                            <div className="flex justify-between items-center text-pink-400/90 px-1">
-                                                <span>Trừ: Người phụ thuộc:</span>
-                                                <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.dependentDeduction)} đ</span>
+                                            <div className="flex justify-between items-center text-pink-400/90 px-1 gap-2">
+                                                <span>Trừ: NPT:</span>
+                                                <span className="font-medium whitespace-nowrap">- {formatCurrency(result.dependentDeduction)} đ</span>
                                             </div>
 
-                                            <div className="pt-5 border-t border-slate-700/50 px-1">
-                                                <div className="flex justify-between items-center mb-1">
+                                            <div className="pt-4 sm:pt-5 border-t border-slate-700/50 px-1">
+                                                <div className="flex justify-between items-center mb-1 gap-2">
                                                     <span className="text-slate-300 font-medium">Thu nhập tính thuế:</span>
-                                                    <span className="font-bold text-xl text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] whitespace-nowrap shrink-0 ml-2">{formatCurrency(result.taxableIncome)} đ</span>
+                                                    <span className="font-bold text-lg sm:text-xl text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] whitespace-nowrap">{formatCurrency(result.taxableIncome)} đ</span>
                                                 </div>
                                             </div>
 
-                                            <div className="pt-6 mt-4 relative">
+                                            <div className="pt-4 sm:pt-6 mt-2 sm:mt-4 relative">
                                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-xl rounded-full"></div>
-                                                <div className="relative flex justify-between items-center bg-slate-800/80 backdrop-blur-sm p-5 rounded-2xl border border-indigo-500/30 mb-3">
-                                                    <span className="font-bold text-indigo-200">Tổng thuế TNCN phát sinh:</span>
-                                                    <span className="font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 drop-shadow-sm whitespace-nowrap shrink-0 ml-2">
+                                                <div className="relative flex flex-col sm:flex-row justify-between sm:items-center bg-slate-800/80 backdrop-blur-sm p-4 sm:p-5 rounded-2xl border border-indigo-500/30 mb-3 gap-2">
+                                                    <span className="font-bold text-indigo-200">Tổng thuế phát sinh:</span>
+                                                    <span className="font-black text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 drop-shadow-sm whitespace-nowrap">
                                                         {formatCurrency(result.totalTax)} đ
                                                     </span>
                                                 </div>
                                             </div>
 
                                             {result.totalDeductedTax > 0 && (
-                                                <div className="flex justify-between items-center text-emerald-400/90 px-1 mb-2">
+                                                <div className="flex justify-between items-center text-emerald-400/90 px-1 mb-2 gap-2">
                                                     <span>Đã tạm nộp (khấu trừ):</span>
-                                                    <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.totalDeductedTax)} đ</span>
+                                                    <span className="font-medium whitespace-nowrap">- {formatCurrency(result.totalDeductedTax)} đ</span>
                                                 </div>
                                             )}
 
                                             <div className={`p-4 rounded-xl border ${result.finalTaxDifference > 0 ? 'bg-red-500/10 border-red-500/30 text-red-200' : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-200'}`}>
-                                                <div className="flex flex-col sm:flex-row justify-between sm:items-center">
-                                                    <span className="font-bold mb-1 sm:mb-0">
-                                                        {result.finalTaxDifference > 0 ? 'Số thuế CẦN NỘP THÊM:' : 'Số thuế NỘP THỪA (được hoàn):'}
+                                                <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1 sm:gap-2">
+                                                    <span className="font-bold">
+                                                        {result.finalTaxDifference > 0 ? 'Số thuế CẦN NỘP THÊM:' : 'Số thuế NỘP THỪA:'}
                                                     </span>
-                                                    <span className={`font-black text-2xl whitespace-nowrap shrink-0 ml-0 sm:ml-2 ${result.finalTaxDifference > 0 ? 'text-red-400' : 'text-emerald-400'}`}>
+                                                    <span className={`font-black text-xl sm:text-2xl whitespace-nowrap ${result.finalTaxDifference > 0 ? 'text-red-400' : 'text-emerald-400'}`}>
                                                         {formatCurrency(Math.abs(result.finalTaxDifference))} đ
                                                     </span>
                                                 </div>
@@ -775,20 +778,20 @@
                         </div>
 
                         {/* Footer */}
-                        <footer className="mt-16 pt-8 border-t border-slate-200/60 text-center pb-8">
+                        <footer className="mt-12 sm:mt-16 pt-8 border-t border-slate-200/60 text-center pb-8">
                             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
                                 <div className="flex items-center gap-3">
                                     <p>© {new Date().getFullYear()} Tính và Quyết toán Thuế TNCN. Tác giả: <strong>Nguyễn Chí Công</strong></p>
                                     <img src="cong.jpg" alt="Nguyễn Chí Công" className="w-12 h-12 rounded-full object-cover border border-slate-300 shadow-sm" />
                                 </div>
-                                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                                <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-2">
                                     <a href="#" className="hover:text-indigo-600 transition-colors">Giới thiệu</a>
                                     <a href="#" className="hover:text-indigo-600 transition-colors">Điều khoản sử dụng</a>
                                     <a href="#" className="hover:text-indigo-600 transition-colors">Chính sách bảo mật</a>
                                     <a href="#" className="hover:text-indigo-600 transition-colors">Liên hệ</a>
                                 </div>
                             </div>
-                            <p className="mt-4 text-xs text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                            <p className="mt-6 sm:mt-4 text-[11px] sm:text-xs text-slate-400 max-w-3xl mx-auto leading-relaxed px-2">
                                 * Lưu ý: Công cụ được thiết kế với mục đích hỗ trợ tham khảo và ước tính số thuế Thu nhập cá nhân. Số liệu thực tế có thể thay đổi tùy thuộc vào hồ sơ, chứng từ quyết toán và quy định cụ thể của Cơ quan Thuế tại từng thời điểm.
                             </p>
                         </footer>
