@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tính / Quyết toán Thuế Thu Nhập Cá Nhân</title>
+    <title>Tính và Quyết toán Thuế Thu Nhập Cá Nhân</title>
     
     <!-- Tích hợp Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +28,7 @@
     <script type="text/babel">
         const { useState } = React;
 
-        // --- HỆ THỐNG ICON (Chuyển đổi từ Lucide React để chạy độc lập trong HTML) ---
+        // --- HỆ THỐNG ICON (Chuyển đổi từ Lucide React) ---
         const Icon = ({ children, size = 24, className = "" }) => (
             <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
                 {children}
@@ -38,9 +38,7 @@
         const Plus = (p) => <Icon {...p}><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></Icon>;
         const Trash2 = (p) => <Icon {...p}><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></Icon>;
         const Info = (p) => <Icon {...p}><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></Icon>;
-        const Loader2 = (p) => <Icon {...p}><path d="M21 12a9 9 0 1 1-6.219-8.56"/></Icon>;
         const Sparkles = (p) => <Icon {...p}><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></Icon>;
-        const Bot = (p) => <Icon {...p}><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></Icon>;
         const Baby = (p) => <Icon {...p}><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 1.5-2 1.5c-2 0-2.5 2-2.5 2"/></Icon>;
         const Users = (p) => <Icon {...p}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></Icon>;
         const User = (p) => <Icon {...p}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></Icon>;
@@ -49,6 +47,11 @@
         const Receipt = (p) => <Icon {...p}><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17V7"/></Icon>;
         const ShieldCheck = (p) => <Icon {...p}><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.5 0 4.5 1 6 2a1 1 0 0 1 1 1v7z"/><path d="m9 12 2 2 4-4"/></Icon>;
         const FileCheck = (p) => <Icon {...p}><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></Icon>;
+        const Mail = (p) => <Icon {...p}><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></Icon>;
+        const Phone = (p) => <Icon {...p}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></Icon>;
+        const Heart = (p) => <Icon {...p}><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></Icon>;
+        const Landmark = (p) => <Icon {...p}><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7 12 2"/></Icon>;
+        const MessageSquare = (p) => <Icon {...p}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></Icon>;
 
         // --- CÁC HÀM TIỆN ÍCH ---
         const formatCurrency = (value) => {
@@ -62,19 +65,6 @@
         const parseCurrency = (value) => {
             if (!value) return 0;
             return parseInt(value.toString().replace(/[^0-9]/g, ''), 10) || 0;
-        };
-
-        const formatMarkdownText = (text) => {
-            if (!text) return null;
-            return text.split('\n').map((line, i) => {
-                const parts = line.split(/(\*\*.*?\*\*)/g).map((part, j) => {
-                    if (part.startsWith('**') && part.endsWith('**')) {
-                        return <strong key={j} className="text-slate-900 font-bold">{part.slice(2, -2)}</strong>;
-                    }
-                    return part;
-                });
-                return <p key={i} className="mb-2 leading-relaxed">{parts}</p>;
-            });
         };
 
         // --- COMPONENT CHÍNH ---
@@ -91,10 +81,6 @@
 
             const [result, setResult] = useState(null);
             const [formError, setFormError] = useState('');
-
-            const [isGeneratingAdvice, setIsGeneratingAdvice] = useState(false);
-            const [adviceData, setAdviceData] = useState(null);
-            const [adviceError, setAdviceError] = useState('');
 
             const addItem = (setter, defaultItem) => setter(prev => [...prev, { ...defaultItem, id: Date.now() + Math.random() }]);
             const removeItem = (setter, id) => setter(prev => prev.filter(item => item.id !== id));
@@ -132,7 +118,6 @@
 
             const handleCalculate = () => {
                 setFormError('');
-                setAdviceData(null); 
                 let hasError = false;
                 
                 const currentYear = parseInt(year, 10);
@@ -242,72 +227,73 @@
                 });
             };
 
-            const getAITaxAdvice = async () => {
-                if (!result) return;
-                setIsGeneratingAdvice(true);
-                setAdviceError('');
-                
-                // Lưu ý: Tính năng gọi AI chỉ hoạt động khi điền một API Key hợp lệ của Gemini API.
-                const apiKey = ""; 
-                if (!apiKey) {
-                    setAdviceError("Cần cung cấp Gemini API Key trong mã nguồn để sử dụng chức năng AI này khi chạy offline.");
-                    setIsGeneratingAdvice(false);
-                    return;
-                }
-
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-                
-                const prompt = `Tôi có dữ liệu tài chính trong ${result.workingMonths} tháng của năm ${result.currentYear} tại Việt Nam:\n- Tổng thu nhập: ${formatCurrency(result.totalIncome)} VNĐ\n- Đóng bảo hiểm: ${formatCurrency(result.totalInsurance)} VNĐ\n- Giảm trừ người phụ thuộc: ${formatCurrency(result.dependentDeduction)} VNĐ\n- Tổng thuế TNCN phát sinh (cả năm): ${formatCurrency(result.totalTax)} VNĐ\n- Số thuế đã tạm nộp (khấu trừ): ${formatCurrency(result.totalDeductedTax)} VNĐ\n- Số thuế ${result.finalTaxDifference > 0 ? 'cần nộp thêm' : 'nộp thừa (được hoàn)'}: ${formatCurrency(Math.abs(result.finalTaxDifference))} VNĐ\n\nHãy đóng vai chuyên gia tư vấn tài chính cá nhân:\n1. Đánh giá về mức thuế và thu nhập này.\n2. Đưa ra 2 chiến lược hợp pháp tối ưu/giảm thiểu mức thuế.\n3. Đưa ra 2 lời khuyên quản lý dòng tiền phù hợp.\nLưu ý: Viết tiếng Việt, thân thiện, súc tích. Dùng ký tự **để in đậm**.`;
-
-                const payload = {
-                    contents: [{ parts: [{ text: prompt }] }],
-                    systemInstruction: { parts: [{ text: "Chuyên gia tài chính Việt Nam. Lời khuyên thiết thực, đúng luật." }] }
-                };
-
-                const delays = [1000, 2000, 4000, 8000];
-                for (let i = 0; i < 4; i++) {
-                    try {
-                        const res = await fetch(url, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                        const data = await res.json();
-                        const textResponse = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                        
-                        if (textResponse) {
-                            setAdviceData(textResponse);
-                            break;
-                        } else throw new Error("Invalid response");
-                    } catch (err) {
-                        if (i === 3) setAdviceError("Hệ thống AI đang bận. Vui lòng thử lại sau.");
-                        else await new Promise(resolve => setTimeout(resolve, delays[i]));
-                    }
-                }
-                setIsGeneratingAdvice(false);
-            };
-
             return (
-                <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50/30 py-10 px-4 font-sans text-slate-800">
+                <div className="min-h-screen bg-slate-50 py-10 px-4 font-sans text-slate-800">
                     <div className="max-w-6xl mx-auto space-y-8">
                         
-                        {/* Header Premium */}
-                        <div className="bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-sm border border-white flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                        {/* Header Tô Màu */}
+                        <div className="bg-gradient-to-br from-blue-900 to-slate-900 p-6 sm:p-8 rounded-3xl shadow-xl border border-blue-800/50 flex flex-col xl:flex-row items-center justify-between gap-6 relative overflow-hidden text-white">
                             
-                            <div className="flex items-center space-x-5 relative z-10">
-                                <div className="p-4 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl shadow-lg shadow-indigo-200">
-                                    <Calculator size={32} />
+                            {/* Decorative background elements */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                            
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-5 relative z-10 w-full xl:w-1/2">
+                                <div className="p-3 sm:p-4 bg-white/10 backdrop-blur-md text-white rounded-2xl shadow-lg border border-white/10 hidden sm:block shrink-0">
+                                    <Landmark size={36} />
                                 </div>
-                                <div>
-                                    <h1 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-indigo-800 tracking-tight mb-1">
-                                        Tính / Quyết toán Thuế Thu Nhập Cá Nhân
+                                <div className="w-full">
+                                    <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4 drop-shadow-sm leading-tight">
+                                        Tính và Quyết toán Thuế Thu Nhập Cá Nhân
                                     </h1>
-                                    <p className="text-slate-500 font-medium">Tác giả: Nguyễn Chí Công</p>
+                                    <div className="flex flex-col gap-3 text-sm sm:text-base font-medium text-indigo-50">
+                                        <div className="flex items-center gap-2">
+                                            <Info size={18} className="text-blue-300 shrink-0" />
+                                            <span className="leading-relaxed">Kết quả thuế TNCN chính xác dựa trên công thức công bố từ cơ quan Nhà Nước.</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            
+                            {/* Contact, Coffee & QR Section */}
+                            <div className="flex flex-col sm:flex-row items-center gap-5 bg-white/10 p-4 sm:p-5 rounded-2xl backdrop-blur-sm border border-white/10 w-full xl:w-auto relative z-10 shrink-0 shadow-inner">
+                                
+                                {/* QR Code moves to the left */}
+                                <div className="flex flex-col items-center gap-2 shrink-0 border-b sm:border-b-0 sm:border-r border-white/20 pb-4 sm:pb-0 sm:pr-5 mb-2 sm:mb-0">
+                                    <div className="bg-white p-1.5 rounded-xl shadow-md">
+                                        <img src="qr.jpg" alt="QR Code" className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-contain" />
+                                    </div>
+                                    <div className="text-center mt-1">
+                                        <div className="text-xs font-bold text-white tracking-wide">Vietcombank</div>
+                                        <div className="text-xs font-semibold text-blue-200 font-mono tracking-wider mt-0.5">0071001071803</div>
+                                    </div>
+                                </div>
+
+                                {/* Text content moves to the right */}
+                                <div className="flex flex-col items-center sm:items-start text-center sm:text-left w-full sm:w-auto overflow-hidden space-y-2">
+                                    <div className="flex items-center gap-2 bg-emerald-500/20 text-emerald-50 px-3 py-1.5 rounded-lg w-fit border border-emerald-400/30 mb-1">
+                                        <MessageSquare size={16} className="text-emerald-300 shrink-0" />
+                                        <span className="font-semibold text-sm">Nhận góp ý, tư vấn, quyết toán thuế</span>
+                                    </div>
+                                    
+                                    <a href="mailto:ngchicongvt@gmail.com" className="flex items-center justify-center sm:justify-start gap-2 text-sm text-indigo-50 hover:text-white transition-colors w-full sm:w-auto">
+                                        <Mail size={16} className="opacity-80 shrink-0" />
+                                        <span>ngchicongvt@gmail.com</span>
+                                    </a>
+                                    <a href="tel:0902288060" className="flex items-center justify-center sm:justify-start gap-2 text-sm text-indigo-50 hover:text-white transition-colors w-full sm:w-auto">
+                                        <Phone size={16} className="opacity-80 shrink-0" />
+                                        <span>Điện thoại / Zalo: 0902288060</span>
+                                    </a>
+
+                                    <div className="flex items-center justify-center sm:justify-start gap-1.5 text-white whitespace-nowrap mt-2 pt-2 border-t border-white/10 w-full">
+                                        <span className="text-sm font-medium text-indigo-100">Nếu bạn thấy có ích,</span>
+                                        <span className="text-sm font-bold">mời mình ly cafe nhé</span>
+                                        <Heart size={16} className="text-pink-400 fill-pink-400 drop-shadow-sm shrink-0" />
+                                    </div>
+                                </div>
+                                
+                            </div>
+
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -316,7 +302,7 @@
                             <div className="lg:col-span-7 space-y-6">
                                 
                                 {/* 1. Thông tin thu nhập */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-100/80">
+                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
                                     <div className="flex justify-between items-center mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-blue-50 text-blue-600 rounded-lg"><Wallet size={20} /></div>
@@ -458,7 +444,7 @@
                                 </div>
 
                                 {/* 2. Bảo hiểm xã hội */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-100/80">
+                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
                                     <div className="flex justify-between items-center mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg"><ShieldCheck size={20} /></div>
@@ -527,7 +513,7 @@
                                 </div>
 
                                 {/* 3. Người phụ thuộc */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-100/80">
+                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
                                     <div className="flex justify-between items-center mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-pink-50 text-pink-600 rounded-lg"><Users size={20} /></div>
@@ -543,7 +529,7 @@
                                     </div>
 
                                     {dependents.length === 0 ? (
-                                        <div className="bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl py-8 flex flex-col items-center justify-center text-slate-400">
+                                        <div className="bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl py-8 flex flex-col items-center justify-center text-slate-400">
                                             <Users size={32} className="mb-2 opacity-50" />
                                             <p className="text-sm font-medium">Bạn chưa đăng ký người phụ thuộc nào</p>
                                         </div>
@@ -553,9 +539,9 @@
                                                 <div 
                                                     key={dep.id} 
                                                     className={`p-5 rounded-2xl border transition-all relative group ${
-                                                        dep.type === 'child' ? 'bg-pink-50/50 border-pink-100 hover:border-pink-300' : 
-                                                        dep.type === 'elder' ? 'bg-teal-50/50 border-teal-100 hover:border-teal-300' :
-                                                        'bg-amber-50/50 border-amber-100 hover:border-amber-300'
+                                                        dep.type === 'child' ? 'bg-pink-50/50 border-pink-200 hover:border-pink-300' : 
+                                                        dep.type === 'elder' ? 'bg-teal-50/50 border-teal-200 hover:border-teal-300' :
+                                                        'bg-amber-50/50 border-amber-200 hover:border-amber-300'
                                                     }`}
                                                 >
                                                     <button 
@@ -631,7 +617,7 @@
                                 </div>
 
                                 {/* 4. Thuế đã khấu trừ */}
-                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-100/80">
+                                <div className="bg-white p-7 rounded-3xl shadow-sm hover:shadow-md transition-shadow border border-slate-200">
                                     <div className="flex justify-between items-center mb-6">
                                         <div className="flex items-center space-x-3">
                                             <div className="p-2 bg-amber-50 text-amber-600 rounded-lg"><FileCheck size={20} /></div>
@@ -689,7 +675,7 @@
                                 >
                                     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
                                     <span className="flex items-center justify-center text-lg tracking-wide">
-                                        TÍNH THUẾ TNCN <ArrowRight className="ml-2" size={20} />
+                                        TÍNH VÀ QUYẾT TOÁN <ArrowRight className="ml-2" size={20} />
                                     </span>
                                 </button>
 
@@ -715,33 +701,33 @@
                                         <div className="space-y-5 text-sm">
                                             <div className="flex justify-between items-center bg-slate-800/50 p-3 rounded-xl">
                                                 <span className="text-slate-400 font-medium">Tổng số tháng tính thuế:</span>
-                                                <span className="font-bold text-indigo-300">{result.workingMonths} tháng (Năm {result.currentYear})</span>
+                                                <span className="font-bold text-indigo-300 whitespace-nowrap shrink-0 ml-2">{result.workingMonths} tháng (Năm {result.currentYear})</span>
                                             </div>
 
                                             <div className="flex justify-between items-center pt-2 px-1">
                                                 <span className="text-slate-300">Tổng thu nhập:</span>
-                                                <span className="font-bold text-lg">{formatCurrency(result.totalIncome)} đ</span>
+                                                <span className="font-bold text-lg whitespace-nowrap shrink-0 ml-2">{formatCurrency(result.totalIncome)} đ</span>
                                             </div>
 
                                             <div className="flex justify-between items-center text-pink-400/90 px-1">
                                                 <span>Trừ: Bảo hiểm bắt buộc:</span>
-                                                <span className="font-medium">- {formatCurrency(result.totalInsurance)} đ</span>
+                                                <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.totalInsurance)} đ</span>
                                             </div>
 
                                             <div className="flex justify-between items-center text-pink-400/90 px-1">
                                                 <span>Trừ: Giảm trừ bản thân (x{result.workingMonths}T):</span>
-                                                <span className="font-medium">- {formatCurrency(result.personalDeduction)} đ</span>
+                                                <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.personalDeduction)} đ</span>
                                             </div>
 
                                             <div className="flex justify-between items-center text-pink-400/90 px-1">
                                                 <span>Trừ: Người phụ thuộc:</span>
-                                                <span className="font-medium">- {formatCurrency(result.dependentDeduction)} đ</span>
+                                                <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.dependentDeduction)} đ</span>
                                             </div>
 
                                             <div className="pt-5 border-t border-slate-700/50 px-1">
                                                 <div className="flex justify-between items-center mb-1">
                                                     <span className="text-slate-300 font-medium">Thu nhập tính thuế:</span>
-                                                    <span className="font-bold text-xl text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">{formatCurrency(result.taxableIncome)} đ</span>
+                                                    <span className="font-bold text-xl text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)] whitespace-nowrap shrink-0 ml-2">{formatCurrency(result.taxableIncome)} đ</span>
                                                 </div>
                                             </div>
 
@@ -749,7 +735,7 @@
                                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-xl rounded-full"></div>
                                                 <div className="relative flex justify-between items-center bg-slate-800/80 backdrop-blur-sm p-5 rounded-2xl border border-indigo-500/30 mb-3">
                                                     <span className="font-bold text-indigo-200">Tổng thuế TNCN phát sinh:</span>
-                                                    <span className="font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 drop-shadow-sm">
+                                                    <span className="font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300 drop-shadow-sm whitespace-nowrap shrink-0 ml-2">
                                                         {formatCurrency(result.totalTax)} đ
                                                     </span>
                                                 </div>
@@ -758,7 +744,7 @@
                                             {result.totalDeductedTax > 0 && (
                                                 <div className="flex justify-between items-center text-emerald-400/90 px-1 mb-2">
                                                     <span>Đã tạm nộp (khấu trừ):</span>
-                                                    <span className="font-medium">- {formatCurrency(result.totalDeductedTax)} đ</span>
+                                                    <span className="font-medium whitespace-nowrap shrink-0 ml-2">- {formatCurrency(result.totalDeductedTax)} đ</span>
                                                 </div>
                                             )}
 
@@ -767,76 +753,24 @@
                                                     <span className="font-bold mb-1 sm:mb-0">
                                                         {result.finalTaxDifference > 0 ? 'Số thuế CẦN NỘP THÊM:' : 'Số thuế NỘP THỪA (được hoàn):'}
                                                     </span>
-                                                    <span className={`font-black text-2xl ${result.finalTaxDifference > 0 ? 'text-red-400' : 'text-emerald-400'}`}>
+                                                    <span className={`font-black text-2xl whitespace-nowrap shrink-0 ml-0 sm:ml-2 ${result.finalTaxDifference > 0 ? 'text-red-400' : 'text-emerald-400'}`}>
                                                         {formatCurrency(Math.abs(result.finalTaxDifference))} đ
                                                     </span>
                                                 </div>
                                             </div>
-                                            
-                                            {/* Nút AI */}
-                                            <div className="mt-8 pt-6 border-t border-slate-700/50">
-                                                {!adviceData && !isGeneratingAdvice && (
-                                                    <button 
-                                                        onClick={getAITaxAdvice}
-                                                        className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-purple-900/20 transition-all border border-indigo-400/30"
-                                                    >
-                                                        <Sparkles size={18} className="text-amber-300" />
-                                                        <span>Nhận cố vấn Tài chính AI</span>
-                                                    </button>
-                                                )}
-                                                
-                                                {isGeneratingAdvice && (
-                                                    <div className="flex items-center justify-center space-x-3 text-indigo-300 py-4 bg-indigo-900/30 rounded-xl border border-indigo-800/50">
-                                                        <Loader2 size={20} className="animate-spin text-indigo-400" />
-                                                        <span className="font-medium animate-pulse">AI đang lập kế hoạch tài chính...</span>
-                                                    </div>
-                                                )}
-                                            </div>
                                         </div>
                                     )}
                                 </div>
-
-                                {/* AI Result Card */}
-                                {adviceData && (
-                                    <div className="bg-white p-7 rounded-3xl shadow-xl shadow-indigo-100/50 border border-indigo-100 relative overflow-hidden group">
-                                        <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"></div>
-                                        <div className="flex items-center space-x-4 mb-6">
-                                            <div className="bg-gradient-to-br from-indigo-100 to-purple-100 p-3 rounded-2xl text-indigo-600 shadow-sm border border-white">
-                                                <Bot size={28} />
-                                            </div>
-                                            <div>
-                                                <h3 className="font-extrabold text-slate-800 text-xl">Cố vấn AI</h3>
-                                                <p className="text-xs text-slate-500 font-medium">Phân tích cá nhân hóa</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="text-slate-600 text-sm space-y-4 font-medium leading-relaxed bg-slate-50/50 p-5 rounded-2xl border border-slate-100">
-                                            {formatMarkdownText(adviceData)}
-                                        </div>
-                                        
-                                        <button 
-                                            onClick={getAITaxAdvice}
-                                            className="mt-6 text-sm text-indigo-600 font-bold hover:text-indigo-800 hover:bg-indigo-50 flex items-center justify-center w-full bg-white border-2 border-indigo-50 py-3 rounded-xl transition-all"
-                                        >
-                                            <Sparkles size={16} className="mr-2" /> Cập nhật lại lời khuyên
-                                        </button>
-                                    </div>
-                                )}
-
-                                {adviceError && (
-                                    <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm font-medium text-center border border-red-200 shadow-sm mt-4">
-                                        {adviceError}
-                                    </div>
-                                )}
-
                             </div>
-
                         </div>
 
                         {/* Footer */}
                         <footer className="mt-16 pt-8 border-t border-slate-200/60 text-center pb-8">
                             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
-                                <p>© {new Date().getFullYear()} Tính / Quyết toán Thuế TNCN. Tác giả: Nguyễn Chí Công.</p>
+                                <div className="flex items-center gap-3">
+                                    <p>© {new Date().getFullYear()} Tính và Quyết toán Thuế TNCN. Tác giả: <strong>Nguyễn Chí Công</strong></p>
+                                    <img src="cong.jpg" alt="Nguyễn Chí Công" className="w-10 h-10 rounded-full object-cover border border-slate-300 shadow-sm" />
+                                </div>
                                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
                                     <a href="#" className="hover:text-indigo-600 transition-colors">Giới thiệu</a>
                                     <a href="#" className="hover:text-indigo-600 transition-colors">Điều khoản sử dụng</a>
